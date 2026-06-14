@@ -1,0 +1,256 @@
+/* ─── Morning Delight — Customer App Global Styles ──────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --font-display: 'Sora', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --primary:   #FF6B35;
+  --primary-d: #e85a24;
+  --dark:      #1A1A2E;
+  --dark2:     #16213E;
+  --bg:        #F2F2F2;
+  --white:     #FFFFFF;
+  --text:      #0F0F0F;
+  --sub:       #6B7280;
+  --border:    #E5E7EB;
+  --success:   #10b981;
+  --danger:    #EF4444;
+  --warning:   #F59E0B;
+  --radius:    14px;
+  --shadow:    0 2px 16px rgba(0,0,0,.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+  --nav-h:     64px;     /* bottom nav height */
+  --header-h:  110px;    /* sticky header height (mobile) */
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 3px; height: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,.12); border-radius: 4px; }
+.no-scroll::-webkit-scrollbar { display: none; }
+.no-scroll { scrollbar-width: none; }
+
+input, select, textarea, button { font-family: inherit; outline: none; }
+input::placeholder { color: #9CA3AF; }
+img { display: block; }
+button { cursor: pointer; }
+
+/* ─── Animations ─── */
+@keyframes fadeUp    { from { opacity:0; transform:translateY(16px) } to { opacity:1; transform:translateY(0) } }
+@keyframes fadeIn    { from { opacity:0 } to { opacity:1 } }
+@keyframes slideUp   { from { transform:translateY(100%); opacity:0 } to { transform:translateY(0); opacity:1 } }
+@keyframes slideDown { from { transform:translateY(-100%); opacity:0 } to { transform:translateY(0); opacity:1 } }
+@keyframes scaleIn   { from { transform:scale(.85); opacity:0 } to { transform:scale(1); opacity:1 } }
+@keyframes bounceIn  { 0%{transform:scale(.3);opacity:0} 55%{transform:scale(1.06)} 80%{transform:scale(.97)} 100%{transform:scale(1);opacity:1} }
+@keyframes pulse     { 0%,100%{opacity:1} 50%{opacity:.45} }
+@keyframes spin      { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes shimmer   { 0%{background-position:-400px 0} 100%{background-position:400px 0} }
+
+/* ─── Utility ─── */
+.animate-fadeup  { animation: fadeUp .4s ease both; }
+.animate-scalein { animation: scaleIn .35s ease both; }
+.animate-slideup { animation: slideUp .35s cubic-bezier(.34,1.2,.64,1) both; }
+
+/* ─── Skeleton ─── */
+.skeleton {
+  background: linear-gradient(90deg,#eee 25%,#e0e0e0 50%,#eee 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 8px;
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #F7931E);
+  color: white; border: none; border-radius: 50px;
+  font-weight: 700; font-size: 15px; padding: 15px 24px;
+  cursor: pointer; transition: all .18s; display: inline-flex;
+  align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 6px 20px rgba(255,107,53,.35);
+}
+.btn-primary:active { transform: scale(.97); box-shadow: 0 2px 8px rgba(255,107,53,.3); }
+.btn-primary:disabled { opacity: .55; cursor: not-allowed; box-shadow: none; }
+
+.btn-outline {
+  background: transparent; color: var(--primary);
+  border: 1.5px solid var(--primary); border-radius: 50px;
+  font-weight: 600; padding: 13px 22px; cursor: pointer; transition: all .18s;
+}
+.btn-outline:active { transform: scale(.97); }
+
+/* ─── Inputs ─── */
+.input-field {
+  width: 100%; padding: 14px 16px;
+  border: 1.5px solid #E5E7EB; border-radius: 12px;
+  font-size: 15px; background: #FAFAFA;
+  transition: border-color .2s, box-shadow .2s;
+  color: var(--text);
+}
+.input-field:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(255,107,53,.12); background: white; }
+
+/* ─── Cards ─── */
+.card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); }
+.card-press { transition: transform .15s, box-shadow .15s; }
+.card-press:active { transform: scale(.97); box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+
+/* ─── Badges ─── */
+.badge-discount {
+  background: #EF4444; color: white; font-size: 9px; font-weight: 800;
+  padding: 2px 7px; border-radius: 20px; line-height: 1.4;
+}
+.badge-popular {
+  background: var(--primary); color: white; font-size: 9px; font-weight: 700;
+  padding: 2px 7px; border-radius: 20px;
+}
+.badge-free {
+  background: #D1FAE5; color: #065F46; font-size: 10px; font-weight: 700;
+  padding: 2px 8px; border-radius: 20px;
+}
+
+/* ─── Section header ─── */
+.section-title { font-family: 'Syne', sans-serif; font-size: 17px; font-weight: 800; color: var(--text); }
+
+/* ─── Tag pills (category filters) ─── */
+.tag-pill {
+  display: inline-flex; align-items: center; padding: 7px 16px;
+  border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: all .15s; border: 1.5px solid #E5E7EB; background: white;
+  color: var(--sub); white-space: nowrap; user-select: none;
+}
+.tag-pill:active { transform: scale(.96); }
+.tag-pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* ─── Bottom Nav ─── */
+.bottom-nav {
+  position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
+  width: calc(100% - 32px); max-width: 440px;
+  background: var(--dark); border-radius: 28px; z-index: 900;
+  display: flex; align-items: center; padding: 8px 6px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.25);
+}
+.nav-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 3px; cursor: pointer;
+  border: none; background: transparent; color: rgba(255,255,255,.5);
+  font-size: 10px; font-family: inherit; padding: 6px 4px;
+  transition: color .2s; -webkit-tap-highlight-color: transparent;
+  border-radius: 20px;
+}
+.nav-item.active { color: var(--primary); }
+.nav-item:active { transform: scale(.9); }
+.nav-home-btn {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  border: none; background: transparent; padding: 0; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-home-inner {
+  width: 46px; height: 46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .25s; background: rgba(255,255,255,.1);
+}
+.nav-home-inner.active {
+  background: linear-gradient(135deg, var(--primary), #F7931E);
+  box-shadow: 0 4px 16px rgba(255,107,53,.45);
+}
+
+/* ─── Page layout ─── */
+.page-wrapper {
+  padding-bottom: 88px; /* space for bottom nav */
+  min-height: 100vh;
+}
+.page-content {
+  padding: 0 16px;
+  max-width: 600px; /* slightly wider on tablet */
+  margin: 0 auto;
+}
+
+/* ─── Responsive — Desktop layout ─── */
+@media (min-width: 768px) {
+  .bottom-nav {
+    max-width: 460px;
+    bottom: 16px;
+  }
+  .page-content { padding: 0 20px; }
+}
+
+@media (min-width: 1024px) {
+  /* On desktop: center the app, show a sidebar */
+  body { background: #E8E8E8; }
+
+  .app-root {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Desktop sidebar navigation */
+  .desktop-sidebar {
+    display: flex !important;
+    width: 220px;
+    flex-shrink: 0;
+    background: white;
+    border-right: 1px solid #E5E7EB;
+    flex-direction: column;
+    padding: 24px 12px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* Center content with max-width */
+  .app-main {
+    flex: 1;
+    background: var(--bg);
+    overflow-y: auto;
+  }
+
+  /* Bottom nav on desktop: move to desktop sidebar equivalent */
+  .bottom-nav {
+    display: none;
+  }
+
+  /* Page gets more padding on desktop */
+  .page-content { padding: 0 28px; max-width: none; }
+}
+
+/* ─── Small phones (≤ 360px) ─── */
+@media (max-width: 360px) {
+  .section-title { font-size: 15px; }
+  .tag-pill { font-size: 12px; padding: 6px 12px; }
+  .bottom-nav { bottom: 8px; width: calc(100% - 24px); }
+}
+
+/* ─── Safe area insets (iPhone notch / home bar) ─── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav {
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+  .page-wrapper { padding-bottom: calc(88px + env(safe-area-inset-bottom)); }
+}
+
+/* ── Dark-background input placeholders ───────────────────────────── */
+.dark-input::placeholder         { color: rgba(255,255,255,0.35) !important; }
+.otp-box::placeholder            { color: rgba(255,255,255,0.30) !important; font-size: 18px; }
+input[data-dark="true"]::placeholder { color: rgba(255,255,255,0.35) !important; }
+
+/* OTP input — force placeholder and numeric keyboard */
+input.otp-box { -webkit-appearance:none; appearance:none; }
+input.otp-box::-webkit-inner-spin-button,
+input.otp-box::-webkit-outer-spin-button { display:none; }
+
+/* ── Global input focus ring ─────────────────────────────────────── */
+input:focus { transition: border-color .2s, box-shadow .2s; }

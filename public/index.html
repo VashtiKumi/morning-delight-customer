@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <!-- ── Viewport & rendering ── -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ── PWA identity ── -->
+    <title>Morning Delight</title>
+    <meta name="application-name" content="Morning Delight" />
+    <meta name="description" content="Order fresh campus food — breakfast, lunch and more, fast delivery across campus." />
+
+    <!-- ── Theme colors ── -->
+    <meta name="theme-color" content="#FF6B35" />
+    <meta name="msapplication-navbutton-color" content="#FF6B35" />
+    <meta name="msapplication-TileColor" content="#1A1A2E" />
+    <meta name="msapplication-TileImage" content="/icons/icon-144.png" />
+
+    <!-- ── PWA manifest ── -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ── Icons ── -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png" />
+
+    <!-- ── iOS full-screen PWA settings ── -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Morning Delight" />
+
+    <!-- ── Android / Chrome ── -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- ── iOS splash screens (covers common iPhone/iPad sizes) ── -->
+    <link rel="apple-touch-startup-image"
+          href="/icons/icon-512.png"
+          media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image"
+          href="/icons/icon-512.png"
+          media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" />
+    <link rel="apple-touch-startup-image"
+          href="/icons/icon-512.png"
+          media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" />
+
+    <!-- ── Preload fonts ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+    <!-- ── Prevent flash of unstyled content ── -->
+    <style>
+      html, body { margin:0; padding:0; background:#1A1A2E; }
+      #root { min-height:100vh; min-height:100dvh; }
+      /* Smooth safe-area insets on iPhone notch/Dynamic Island */
+      :root { --sat: env(safe-area-inset-top); --sab: env(safe-area-inset-bottom); }
+    </style>
+  </head>
+  <body>
+    <noscript>Morning Delight requires JavaScript. Please enable it in your browser settings.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
