@@ -5,7 +5,7 @@ import { useState } from 'react';
 import DB from '../utils/db';
 import { FOOD_IMGS } from '../utils/constants';
 
-const GREEN = '#2D6A4F';  // Emerald green for active filter
+const GREEN = '#00025e';  // Emerald green for active filter
 const CATS  = ['All','Rice','Soup','Local','Snacks','Drinks','Chicken','Pizza','Burger'];
 
 export default function SearchPage({ onSelectVendor }) {
@@ -108,14 +108,14 @@ export default function SearchPage({ onSelectVendor }) {
                   <div style={{ display:'flex', alignItems:'center', gap:6, fontSize:12, flexWrap:'wrap' }}>
                     {/* Rating */}
                     <div style={{ display:'flex', alignItems:'center', gap:3 }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#f09800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                       <span style={{ fontWeight:700, color:'#0F0F0F' }}>{v.rating||4.4}</span>
                       <span style={{ color:'#9CA3AF' }}>({v.reviewCount||0})</span>
                     </div>
                     <span style={{ color:'#E5E7EB' }}>·</span>
                     <span style={{ color:'#9CA3AF', fontFamily:'DM Sans,sans-serif' }}>{v.deliveryTime||'35-50'} min</span>
                     <span style={{ color:'#E5E7EB' }}>·</span>
-                    <span style={{ color:v.deliveryFee===0?GREEN:'#6B7280', fontWeight:v.deliveryFee===0?700:400, fontFamily:'DM Sans,sans-serif' }}>
+                    <span style={{ color:v.deliveryFee===0?GREEN:'#00297a', fontWeight:v.deliveryFee===0?700:400, fontFamily:'DM Sans,sans-serif' }}>
                       {v.deliveryFee===0 ? 'Free delivery' : `GH₵${v.deliveryFee} delivery`}
                     </span>
                   </div>

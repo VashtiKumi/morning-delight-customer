@@ -11,9 +11,9 @@ export default function Loader() {
     return () => { clearInterval(p); clearInterval(s); };
   }, []);
   return (
-    <div style={{ minHeight:'100vh', background:'#1A1A2E', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', position:'relative', overflow:'hidden' }}>
+    <div style={{ minHeight:'100vh', background:'#060641', display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', position:'relative', overflow:'hidden' }}>
       {SLIDES.map((src,i) => <img key={i} src={src} alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', opacity:slide===i?.2:0, transition:'opacity 1s ease', filter:'blur(1.5px)' }} />)}
-      <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom,rgba(26,26,46,.88),rgba(26,26,46,.94))' }} />
+      <div style={{ position:'absolute', inset:0, background:'linear-gradient(to bottom,rgb(2, 2, 48),rgba(26,26,46,.94))' }} />
       <div style={{ position:'relative', zIndex:1, textAlign:'center', padding:32, width:'100%', maxWidth:360 }}>
         {/* M Shield */}
         <div style={{ width:90, height:90, margin:'0 auto 24px', animation:'float 3s ease-in-out infinite', filter:'drop-shadow(0 8px 32px rgba(255,107,53,.5))' }}>
@@ -22,7 +22,7 @@ export default function Loader() {
         <h1 style={{ fontFamily:'Sora,sans-serif', fontSize:36, fontWeight:800, background:'linear-gradient(135deg,#FF6B35,#F7931E)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', marginBottom:6 }}>
           Morning Delight
         </h1>
-        <p style={{ color:'rgba(255,255,255,.45)', fontSize:12, letterSpacing:3, textTransform:'uppercase', marginBottom:44 }}>
+        <p style={{ color:'rgba(255, 255, 255, 0.9)', fontSize:12, letterSpacing:3, textTransform:'uppercase', marginBottom:44 }}>
           Campus Food Ordering
         </p>
         <div style={{ width:'100%', height:4, background:'rgba(255,255,255,.1)', borderRadius:4, overflow:'hidden', marginBottom:20 }}>

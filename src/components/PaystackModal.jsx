@@ -37,9 +37,9 @@ const NETWORKS = [
     id:        'mtn',
     name:      'MTN MoMo',
     short:     'MTN',
-    color:     '#F59E0B',
+    color:     '#ffa200',
     light:     '#FFFBEB',
-    border:    '#FCD34D',
+    border:    '#fda41e',
     prefixes:  '024 · 054 · 055 · 059 · 025',
     ussd:      '*170#',
     logo:      'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=60&q=80',
@@ -58,7 +58,7 @@ const NETWORKS = [
     id:        'vodafone',
     name:      'Vodafone Cash',
     short:     'Vodafone',
-    color:     '#DC2626',
+    color:     '#eb0000',
     light:     '#FEF2F2',
     border:    '#FCA5A5',
     prefixes:  '020 · 050',
@@ -79,7 +79,7 @@ const NETWORKS = [
     id:        'airteltigo',
     name:      'AirtelTigo Money',
     short:     'AirtelTigo',
-    color:     '#EA580C',
+    color:     '#ff5900',
     light:     '#FFF7ED',
     border:    '#FDBA74',
     prefixes:  '026 · 056 · 027 · 057 · 023',
@@ -219,7 +219,7 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
               </div>
               <div style={{ flex:1 }}>
                 <div style={{ fontWeight:800, fontSize:16, color:'white', marginBottom:3 }}>{vendor.businessName}</div>
-                <div style={{ fontFamily:'monospace', fontSize:18, fontWeight:700, color:'#FF6B35', letterSpacing:2 }}>{vendor.momoNumber}</div>
+                <div style={{ fontFamily:'monospace', fontSize:18, fontWeight:700, color:'#dd3b00', letterSpacing:2 }}>{vendor.momoNumber}</div>
                 <div style={{ fontSize:11, color:'rgba(255,255,255,.35)', marginTop:2 }}>
                   {detectNetwork(vendor.momoNumber) === 'mtn'        ? 'MTN MoMo' :
                    detectNetwork(vendor.momoNumber) === 'vodafone'   ? 'Vodafone Cash' :
@@ -228,7 +228,7 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
               </div>
               <div style={{ textAlign:'right' }}>
                 <div style={{ fontSize:11, color:'rgba(255,255,255,.4)', marginBottom:4 }}>Amount</div>
-                <div style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:22, color:'#FF6B35' }}>GH₵{amount}</div>
+                <div style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:22, color:'#f54100' }}>GH₵{amount}</div>
               </div>
             </div>
           </div>
@@ -283,7 +283,7 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
             </button>
             <div>
               <h2 style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:19, color:'#0F0F0F' }}>Pay via {net.name}</h2>
-              <p style={{ fontSize:12, color:'#9CA3AF', marginTop:1 }}>Follow these 7 steps on your {net.short} line</p>
+              <p style={{ fontSize:12, color:'#dadce0', marginTop:1 }}>Follow these 7 steps on your {net.short} line</p>
             </div>
           </div>
 
@@ -295,16 +295,16 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
                 <div style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:28, color:net.color, lineHeight:1 }}>GH₵{amount}</div>
               </div>
               <div style={{ textAlign:'right' }}>
-                <div style={{ fontSize:11, color:'#6B7280', marginBottom:4 }}>To this number</div>
+                <div style={{ fontSize:11, color:'#fcfcfc', marginBottom:4 }}>To this number</div>
                 <div style={{ fontFamily:'monospace', fontWeight:800, fontSize:22, color:'#0F0F0F', letterSpacing:2 }}>{vendor.momoNumber}</div>
-                <div style={{ fontSize:11, color:'#9CA3AF' }}>{vendor.businessName}</div>
+                <div style={{ fontSize:11, color:'#ffffff' }}>{vendor.businessName}</div>
               </div>
             </div>
 
             {/* Copy-friendly number */}
             <div style={{ background:'white', borderRadius:12, padding:'10px 14px', marginTop:14, display:'flex', justifyContent:'space-between', alignItems:'center', border:`1px solid ${net.border}` }}>
               <div>
-                <div style={{ fontSize:10, color:'#9CA3AF', marginBottom:2 }}>Vendor's MoMo number (copy this)</div>
+                <div style={{ fontSize:10, color:'#ffffff', marginBottom:2 }}>Vendor's MoMo number (copy this)</div>
                 <div style={{ fontFamily:'monospace', fontWeight:800, fontSize:20, color:'#0F0F0F', letterSpacing:3 }}>{vendor.momoNumber}</div>
               </div>
               <button onClick={()=>{ navigator.clipboard?.writeText(vendor.momoNumber); }}
@@ -325,7 +325,7 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
           <button onClick={()=>setStep('enter_ref')} style={{ width:'100%', padding:'16px', background:`linear-gradient(135deg,${net.color},${net.color}cc)`, border:'none', borderRadius:50, color:'white', fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:16, cursor:'pointer', boxShadow:`0 8px 24px ${net.color}40` }}>
             I've Sent the Money →
           </button>
-          <p style={{ textAlign:'center', fontSize:12, color:'#9CA3AF', marginTop:12 }}>
+          <p style={{ textAlign:'center', fontSize:12, color:'#ffffff', marginTop:12 }}>
             You'll get a confirmation SMS with a transaction ID
           </p>
         </div>
@@ -354,12 +354,12 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
 
           {/* SMS example */}
           <div style={{ background:'#F9FAFB', border:'1px solid #E5E7EB', borderRadius:16, padding:'16px 18px', marginBottom:22 }}>
-            <div style={{ fontSize:11, fontWeight:700, color:'#9CA3AF', textTransform:'uppercase', letterSpacing:.8, marginBottom:10 }}>Your SMS looks like this</div>
+            <div style={{ fontSize:11, fontWeight:700, color:'#fafafa', textTransform:'uppercase', letterSpacing:.8, marginBottom:10 }}>Your SMS looks like this</div>
             <div style={{ fontFamily:'monospace', fontSize:12, color:'#374151', lineHeight:1.8, background:'white', borderRadius:10, padding:'12px 14px', border:'1px solid #E5E7EB' }}>
               <div style={{ color:'#9CA3AF', fontSize:10, marginBottom:4 }}>FROM: {net?.short || 'MOMO'}</div>
               <span>You have sent GH₵{amount} to </span><span style={{ fontWeight:700 }}>{vendor.momoNumber}</span>
               <span>. Your transaction ID is </span>
-              <span style={{ background:'#FFF7ED', color:'#FF6B35', fontWeight:800, padding:'1px 6px', borderRadius:4 }}>GH24XXXXXXXXX</span>
+              <span style={{ background:'#FFF7ED', color:'#f04000', fontWeight:800, padding:'1px 6px', borderRadius:4 }}>GH24XXXXXXXXX</span>
               <span>. Balance: GH₵XX.XX</span>
             </div>
           </div>
@@ -374,15 +374,15 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
               onChange={e => { setTxRef(e.target.value); setRefError(''); }}
               placeholder="e.g. GH24XXXXXXXXX"
               autoFocus
-              style={{ width:'100%', padding:'16px', border:`2px solid ${refError?'#EF4444':txRef?'#10b981':'#E5E7EB'}`, borderRadius:14, fontSize:16, fontFamily:'monospace', letterSpacing:1, outline:'none', fontWeight:700, transition:'border .2s', textTransform:'uppercase' }}
-              onFocus={e => e.target.style.borderColor = refError ? '#EF4444' : '#FF6B35'}
-              onBlur={e => e.target.style.borderColor = refError ? '#EF4444' : txRef ? '#10b981' : '#E5E7EB'}
+              style={{ width:'100%', padding:'16px', border:`2px solid ${refError?'#fc0000':txRef?'#15b600':'#E5E7EB'}`, borderRadius:14, fontSize:16, fontFamily:'monospace', letterSpacing:1, outline:'none', fontWeight:700, transition:'border .2s', textTransform:'uppercase' }}
+              onFocus={e => e.target.style.borderColor = refError ? '#ee0000' : '#e43d00'}
+              onBlur={e => e.target.style.borderColor = refError ? '#ff0000' : txRef ? '#009407' : '#E5E7EB'}
               onKeyDown={e => e.key === 'Enter' && confirmPayment()}
             />
             {refError ? (
-              <p style={{ color:'#EF4444', fontSize:12, marginTop:6 }}>{refError}</p>
+              <p style={{ color:'#db0000', fontSize:12, marginTop:6 }}>{refError}</p>
             ) : (
-              <p style={{ color:'#9CA3AF', fontSize:12, marginTop:6 }}>Found in the SMS confirmation sent to your phone after payment</p>
+              <p style={{ color:'#f6f7fa', fontSize:12, marginTop:6 }}>Found in the SMS confirmation sent to your phone after payment</p>
             )}
           </div>
 
@@ -403,14 +403,14 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
           <button
             onClick={confirmPayment}
             disabled={busy}
-            style={{ width:'100%', padding:'16px', background:busy?'#9CA3AF':'linear-gradient(135deg,#FF6B35,#F7931E)', border:'none', borderRadius:50, color:'white', fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:16, cursor:busy?'not-allowed':'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:10, boxShadow:busy?'none':'0 8px 24px rgba(255,107,53,.35)', transition:'all .2s' }}
+            style={{ width:'100%', padding:'16px', background:busy?'#fdfdfd':'linear-gradient(135deg,#FF6B35,#F7931E)', border:'none', borderRadius:50, color:'white', fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:16, cursor:busy?'not-allowed':'pointer', display:'flex', alignItems:'center', justifyContent:'center', gap:10, boxShadow:busy?'none':'0 8px 24px rgba(255,107,53,.35)', transition:'all .2s' }}
           >
             {busy
               ? <><span style={{ width:20, height:20, borderRadius:'50%', border:'2.5px solid rgba(255,255,255,.4)', borderTopColor:'white', animation:'spin 1s linear infinite', display:'inline-block' }}/> Confirming...</>
               : <><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M20 6L9 17l-5-5"/></svg> Confirm My Order</>
             }
           </button>
-          <p style={{ textAlign:'center', fontSize:11, color:'#9CA3AF', marginTop:12 }}>
+          <p style={{ textAlign:'center', fontSize:11, color:'#f8f8f8', marginTop:12 }}>
             Your order will be sent to {vendor.businessName} once confirmed
           </p>
         </div>
@@ -430,7 +430,7 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
           {/* Animated success ring */}
           <div style={{ position:'relative', width:90, height:90, margin:'0 auto 24px' }}>
             <div style={{ width:90, height:90, borderRadius:'50%', background:'linear-gradient(135deg,#ECFDF5,#D1FAE5)', border:'3px solid #10b981', display:'flex', alignItems:'center', justifyContent:'center', animation:'scaleIn .5s cubic-bezier(.34,1.56,.64,1)' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#0d9c00" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M20 6L9 17l-5-5"/>
               </svg>
             </div>
@@ -454,7 +454,7 @@ export default function PaystackModal({ vendor, total, customer, onSuccess, onCl
             ].map(([l, v]) => (
               <div key={l} style={{ display:'flex', justifyContent:'space-between', padding:'8px 0', borderBottom:'1px solid #F3F4F6', fontSize:13 }}>
                 <span style={{ color:'#9CA3AF', minWidth:100 }}>{l}</span>
-                <span style={{ fontWeight:600, color: l==='Status' ? '#10b981' : '#0F0F0F', textAlign:'right', maxWidth:220, wordBreak:'break-all' }}>{v}</span>
+                <span style={{ fontWeight:600, color: l==='Status' ? '#13a500' : '#0F0F0F', textAlign:'right', maxWidth:220, wordBreak:'break-all' }}>{v}</span>
               </div>
             ))}
           </div>

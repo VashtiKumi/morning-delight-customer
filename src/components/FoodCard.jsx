@@ -8,7 +8,7 @@ export default function FoodCard({ item, onAdd }) {
   return (
     <div
       className="food-card"
-      style={{ background: '#13131a', border: '1px solid #1c1c26', borderRadius: 18, overflow: 'hidden', cursor: 'pointer', transition: 'all .25s' }}
+      style={{ background: '#010122', border: '1px solid #000035', borderRadius: 18, overflow: 'hidden', cursor: 'pointer', transition: 'all .25s' }}
     >
       {/* Food image */}
       <div style={{ height: 160, position: 'relative', overflow: 'hidden', borderRadius: '18px 18px 0 0' }}>
@@ -33,10 +33,10 @@ export default function FoodCard({ item, onAdd }) {
         <div style={{ fontWeight: 700, fontSize: 14, color: '#f0f0f5', marginBottom: 4 }}>{item.name}</div>
         <div style={{ fontSize: 11, color: '#4a4a60', marginBottom: 12, lineHeight: 1.5 }}>{item.description}</div>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: '#ff6b35' }}>₵{item.price}</span>
+          <span style={{ fontFamily: 'Sora, sans-serif', fontSize: 18, fontWeight: 800, color: '#e93e00' }}>₵{item.price}</span>
           <button
             onClick={onAdd}
-            style={{ width: 32, height: 32, borderRadius: '50%', background: '#ff6b35', border: 'none', color: 'white', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform .15s', lineHeight: 1 }}
+            style={{ width: 32, height: 32, borderRadius: '50%', background: '#e73e00', border: 'none', color: 'white', fontSize: 20, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform .15s', lineHeight: 1 }}
             onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.15)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = ''; }}
           >

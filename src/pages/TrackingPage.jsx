@@ -43,12 +43,12 @@ function loadLeaflet() {
 
 // ── Status pipeline config ─────────────────────────────────────────────
 const STAGES = [
-  { key:'pending',    label:'Order Placed',   icon:'📝', color:'#9CA3AF' },
-  { key:'confirmed',  label:'Confirmed',       icon:'✅', color:'#FF6B35' },
-  { key:'preparing',  label:'Preparing',       icon:'👨‍🍳', color:'#F59E0B' },
-  { key:'ready',      label:'Ready',           icon:'🎁', color:'#10b981' },
-  { key:'on_the_way', label:'On the Way',      icon:'🛵', color:'#FF6B35' },
-  { key:'delivered',  label:'Delivered',       icon:'🎉', color:'#10b981' },
+  { key:'pending',    label:'Order Placed',   icon:'📝', color:'#003796' },
+  { key:'confirmed',  label:'Confirmed',       icon:'✅', color:'#f54100' },
+  { key:'preparing',  label:'Preparing',       icon:'👨‍🍳', color:'#f89d00' },
+  { key:'ready',      label:'Ready',           icon:'🎁', color:'#009c15' },
+  { key:'on_the_way', label:'On the Way',      icon:'🛵', color:'#f34100' },
+  { key:'delivered',  label:'Delivered',       icon:'🎉', color:'#0b8600' },
 ];
 
 function StatusPipeline({ status }) {
@@ -67,7 +67,7 @@ function StatusPipeline({ status }) {
                   {done ? <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round"><path d="M20 6L9 17l-5-5"/></svg>
                         : <span style={{ fontSize: 10, filter: done||current?'none':'grayscale(1)', opacity: done||current?1:.35 }}>{s.icon}</span>}
                 </div>
-                <span style={{ fontSize: 9, color: current ? col : '#9CA3AF', fontWeight: current?800:500, textAlign: 'center', whiteSpace: 'nowrap' }}>{s.label}</span>
+                <span style={{ fontSize: 9, color: current ? col : '#00399b', fontWeight: current?800:500, textAlign: 'center', whiteSpace: 'nowrap' }}>{s.label}</span>
               </div>
               {i < STAGES.length - 1 && (
                 <div style={{ flex: 1, height: 2, background: done ? col : '#F3F4F6', marginBottom: 18, transition: 'background .4s', minWidth: 8 }} />
@@ -151,7 +151,7 @@ export default function TrackingPage({ order, customer, onBack }) {
 
       // Route line
       const routeLine = L.polyline([[vend.lat, vend.lng], [cust.lat, cust.lng]], {
-        color: '#FF6B35', weight: 3, opacity: 0.55, dashArray: '8, 6',
+        color: '#e93e00', weight: 3, opacity: 0.55, dashArray: '8, 6',
       }).addTo(map);
 
       // Fit both points
@@ -301,7 +301,7 @@ export default function TrackingPage({ order, customer, onBack }) {
             </div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div style={{ fontFamily: 'Sora,sans-serif', fontWeight: 800, fontSize: 18, color: '#FF6B35' }}>GH₵{parseFloat(order.total||0).toFixed(2)}</div>
+            <div style={{ fontFamily: 'Sora,sans-serif', fontWeight: 800, fontSize: 18, color: '#e73e00' }}>GH₵{parseFloat(order.total||0).toFixed(2)}</div>
           </div>
         </div>
 

@@ -4,15 +4,15 @@ import DB from '../utils/db';
 
 const TYPE_CONFIG = {
   order_placed: { color:'#2D6A4F', bg:'#f0fdf4', border:'#a7f3d0', icon:'✅' },
-  order_update: { color:'#06b6d4', bg:'#ecfeff', border:'#a5f3fc', icon:'📦' },
-  on_the_way:   { color:'#FF6B35', bg:'#fff7ed', border:'#fed7aa', icon:'🛵' },
-  delivered:    { color:'#10b981', bg:'#f0fdf4', border:'#bbf7d0', icon:'🎉' },
-  morning:      { color:'#F59E0B', bg:'#fffbeb', border:'#fde68a', icon:'☀️' },
-  new_food:     { color:'#7C3AED', bg:'#f5f3ff', border:'#ddd6fe', icon:'🍽️' },
+  order_update: { color:'#0039a3', bg:'#ecfeff', border:'#a5f3fc', icon:'📦' },
+  on_the_way:   { color:'#f84200', bg:'#fff7ed', border:'#fed7aa', icon:'🛵' },
+  delivered:    { color:'#047900', bg:'#f0fdf4', border:'#bbf7d0', icon:'🎉' },
+  morning:      { color:'#ffa200', bg:'#fffbeb', border:'#fde68a', icon:'☀️' },
+  new_food:     { color:'#5200df', bg:'#f5f3ff', border:'#ddd6fe', icon:'🍽️' },
   reward:       { color:'#F59E0B', bg:'#fffbeb', border:'#fde68a', icon:'⭐' },
-  promo:        { color:'#7C3AED', bg:'#f5f3ff', border:'#ddd6fe', icon:'🎁' },
-  new_order:    { color:'#FF6B35', bg:'#fff7ed', border:'#fed7aa', icon:'🔔' },
-  system:       { color:'#6B7280', bg:'#f9fafb', border:'#E5E7EB', icon:'⚙️' },
+  promo:        { color:'#4300b8', bg:'#f5f3ff', border:'#ddd6fe', icon:'🎁' },
+  new_order:    { color:'#f04000', bg:'#fff7ed', border:'#fed7aa', icon:'🔔' },
+  system:       { color:'#000f94', bg:'#f9fafb', border:'#E5E7EB', icon:'⚙️' },
 };
 
 function timeAgo(iso) {

@@ -8,12 +8,12 @@ import { useState, useEffect } from 'react';
 import DB from '../utils/db';
 import { enc, REWARD_TIERS } from '../utils/constants';
 
-const GREEN  = '#2D6A4F';
-const ORANGE = '#FF6B35';
-const GOLD   = '#F4C430';
+const GREEN  = '#01165a';
+const ORANGE = '#db3a00';
+const GOLD   = '#f3b600';
 const LGRAY  = '#F8F9FA';
 const WHITE  = '#FFFFFF';
-const NAVY   = '#1A1A2E';
+const NAVY   = '#000033';
 const BORDER = '#E5E7EB';
 const MUTED  = '#9CA3AF';
 const TEXT   = '#0F0F0F';
@@ -272,8 +272,8 @@ function HelpModal({ onClose }) {
 function PaymentModal({ onClose }) {
   const methods = [
     { icon:'📱', name:'MTN MoMo', prefix:'024 / 054 / 055 / 059', color:'#FFCC00', bg:'#FFFBEB' },
-    { icon:'📱', name:'Vodafone Cash', prefix:'020 / 050', color:'#EF4444', bg:'#FEF2F2' },
-    { icon:'📱', name:'AirtelTigo Money', prefix:'026 / 056 / 027', color:'#F97316', bg:'#FFF7ED' },
+    { icon:'📱', name:'Vodafone Cash', prefix:'020 / 050', color:'#be0000', bg:'#FEF2F2' },
+    { icon:'📱', name:'AirtelTigo Money', prefix:'026 / 056 / 027', color:'#f36500', bg:'#FFF7ED' },
   ];
   return (
     <Modal title="Payment Methods" onClose={onClose}>

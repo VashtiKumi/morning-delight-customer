@@ -67,11 +67,11 @@ export default function BottomNav({ section, setSection, notifCount = 0 }) {
               {tab.id === 'notifs' && notifCount > 0 && (
                 <span style={{
                   position: 'absolute', top: -3, right: -3,
-                  background: '#EF4444', color: 'white',
+                  background: '#ff0000', color: 'white',
                   fontSize: 8, fontWeight: 800,
                   width: 13, height: 13, borderRadius: '50%',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  border: '1.5px solid #1A1A2E',
+                  border: '1.5px solid #000030',
                 }}>
                   {notifCount > 9 ? '9+' : notifCount}
                 </span>

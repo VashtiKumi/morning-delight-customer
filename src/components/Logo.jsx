@@ -15,12 +15,12 @@ export function LogoMark({ size = 40 }) {
       <defs>
         <radialGradient id={`md-bg-${s}`} cx="50%" cy="45%" r="55%">
           <stop offset="0%"   stopColor="#2A1E0F"/>
-          <stop offset="100%" stopColor="#0F1629"/>
+          <stop offset="100%" stopColor="#0f0e2c"/>
         </radialGradient>
         <radialGradient id={`md-sun-${s}`} cx="50%" cy="50%" r="50%">
           <stop offset="0%"   stopColor="#FFE8A0"/>
-          <stop offset="60%"  stopColor="#FFBD3E"/>
-          <stop offset="100%" stopColor="#FF8C1A"/>
+          <stop offset="60%"  stopColor="#e99700"/>
+          <stop offset="100%" stopColor="#f17900"/>
         </radialGradient>
         <filter id={`md-rg-${s}`}>
           <feGaussianBlur stdDeviation={Math.max(1, sc(6))}/>
@@ -35,20 +35,20 @@ export function LogoMark({ size = 40 }) {
       <rect width="512" height="512" rx="96" fill={`url(#md-bg-${s})`}/>
 
       {/* Ambient glow */}
-      <ellipse cx="256" cy="210" rx="200" ry="160" fill="#FF8C1A" opacity="0.07"/>
+      <ellipse cx="256" cy="210" rx="200" ry="160" fill="#fa7d00" opacity="0.07"/>
 
       {/* Sunrise rays */}
-      <line x1="256" y1="330" x2="66"  y2="200" stroke="#FFBD3E" strokeWidth="10" strokeLinecap="round" opacity="0.20" filter={`url(#md-rg-${s})`}/>
-      <line x1="256" y1="330" x2="452" y2="200" stroke="#FFBD3E" strokeWidth="10" strokeLinecap="round" opacity="0.20" filter={`url(#md-rg-${s})`}/>
-      <line x1="256" y1="330" x2="120" y2="142" stroke="#FFBD3E" strokeWidth="12" strokeLinecap="round" opacity="0.45" filter={`url(#md-rg-${s})`}/>
-      <line x1="256" y1="330" x2="392" y2="142" stroke="#FFBD3E" strokeWidth="12" strokeLinecap="round" opacity="0.45" filter={`url(#md-rg-${s})`}/>
-      <line x1="256" y1="330" x2="176" y2="108" stroke="#FFCE5E" strokeWidth="14" strokeLinecap="round" opacity="0.70" filter={`url(#md-rg-${s})`}/>
-      <line x1="256" y1="330" x2="336" y2="108" stroke="#FFCE5E" strokeWidth="14" strokeLinecap="round" opacity="0.70" filter={`url(#md-rg-${s})`}/>
-      <line x1="256" y1="330" x2="256" y2="88"  stroke="#FFE08A" strokeWidth="17" strokeLinecap="round" opacity="0.90" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="66"  y2="200" stroke="#faa200" strokeWidth="10" strokeLinecap="round" opacity="0.20" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="452" y2="200" stroke="#ffa600" strokeWidth="10" strokeLinecap="round" opacity="0.20" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="120" y2="142" stroke="#f59f00" strokeWidth="12" strokeLinecap="round" opacity="0.45" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="392" y2="142" stroke="#f09c00" strokeWidth="12" strokeLinecap="round" opacity="0.45" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="176" y2="108" stroke="#ffb300" strokeWidth="14" strokeLinecap="round" opacity="0.70" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="336" y2="108" stroke="#ffb300" strokeWidth="14" strokeLinecap="round" opacity="0.70" filter={`url(#md-rg-${s})`}/>
+      <line x1="256" y1="330" x2="256" y2="88"  stroke="#ffbb00" strokeWidth="17" strokeLinecap="round" opacity="0.90" filter={`url(#md-rg-${s})`}/>
 
       {/* Sun glow rings */}
-      <circle cx="256" cy="128" r="58" fill="#FFBD3E" opacity="0.15" filter={`url(#md-glw-${s})`}/>
-      <circle cx="256" cy="128" r="42" fill="#FFD060" opacity="0.25"/>
+      <circle cx="256" cy="128" r="58" fill="#f19d00" opacity="0.15" filter={`url(#md-glw-${s})`}/>
+      <circle cx="256" cy="128" r="42" fill="#faaf00" opacity="0.25"/>
 
       {/* Sun */}
       <circle cx="256" cy="128" r="30" fill={`url(#md-sun-${s})`}/>
@@ -56,7 +56,7 @@ export function LogoMark({ size = 40 }) {
 
       {/* M letterform — depth shadow */}
       <path d="M 90 414 L 90 240 L 256 330 L 422 240 L 422 414"
-            fill="none" stroke="#FF6B35" strokeWidth="46"
+            fill="none" stroke="#ff4400" strokeWidth="46"
             strokeLinecap="round" strokeLinejoin="round" opacity="0.25"/>
 
       {/* M letterform — main */}
@@ -66,7 +66,7 @@ export function LogoMark({ size = 40 }) {
 
       {/* Horizon arc */}
       <path d="M 60 340 Q 256 306 452 340"
-            fill="none" stroke="#FFBD3E" strokeWidth="3"
+            fill="none" stroke="#ffa600" strokeWidth="3"
             strokeLinecap="round" opacity="0.30"/>
     </svg>
   );
@@ -75,8 +75,8 @@ export function LogoMark({ size = 40 }) {
 export function LogoFull({ size = 36, variant = 'light', noTagline = false }) {
   // variant: 'light' (white text), 'dark' (dark text on light bg), 'gold' (gold text)
   const textMain   = variant === 'dark' ? '#1A1A2E' : 'white';
-  const textSub    = variant === 'dark' ? '#FF6B35' : variant === 'gold' ? '#FFE08A' : 'rgba(255,255,255,0.95)';
-  const textMorning= variant === 'dark' ? '#FF6B35' : variant === 'gold' ? '#FFBD3E' : '#FF8C42';
+  const textSub    = variant === 'dark' ? '#f34100' : variant === 'gold' ? '#FFE08A' : 'rgba(255,255,255,0.95)';
+  const textMorning= variant === 'dark' ? '#f04000' : variant === 'gold' ? '#FFBD3E' : '#FF8C42';
   const ruleOpacity= variant === 'dark' ? '0.4' : '0.55';
 
   return (

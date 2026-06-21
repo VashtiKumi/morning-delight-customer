@@ -7,16 +7,16 @@ import { enc } from '../utils/constants';
 import { LogoMark } from '../components/Logo';
 import { sendOTPEmail } from '../utils/emailService';
 
-const GREEN     = '#2D6A4F';
-const GREEN_D   = '#1B4332';
-const GREEN_L   = '#40916C';
-const GOLD      = '#F4C430';
-const GOLD_D    = '#D4A017';
+const GREEN     = '#02005c';
+const GREEN_D   = '#000d53';
+const GREEN_L   = '#000872';
+const GOLD      = '#fdbe00';
+const GOLD_D    = '#d19600';
 const WHITE     = '#FFFFFF';
 const LGRAY     = '#F8F9FA';
 const BORDER    = '#E2E8F0';
-const TEXT      = '#0F172A';
-const MUTED     = '#64748B';
+const TEXT      = '#041336';
+const MUTED     = '#00285f';
 
 // ── Responsive hook ────────────────────────────────────────────────────
 function useIsMobile() {
@@ -38,7 +38,7 @@ function InputField({ label, type='text', placeholder, value, onChange, icon, au
 
   const bg     = dark ? 'rgba(255,255,255,0.08)'  : LGRAY;
   const border = dark
-    ? `1.5px solid ${focused ? 'rgba(244,196,48,0.6)' : 'rgba(255,255,255,0.12)'}`
+    ? `1.5px solid ${focused ? 'rgba(250, 187, 0, 0.9)' : 'rgba(255,255,255,0.12)'}`
     : `1.5px solid ${focused ? GREEN : BORDER}`;
   const color  = dark ? WHITE : TEXT;
   const placeholderColor = dark ? 'rgba(255,255,255,0.35)' : '#9CA3AF';

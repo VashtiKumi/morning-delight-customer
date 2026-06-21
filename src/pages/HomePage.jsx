@@ -7,14 +7,14 @@ import { foodImg, FOOD_IMGS } from '../utils/constants';
 import { LogoMark } from '../components/Logo';
 
 // ── Design tokens ─────────────────────────────────────────────────────
-const NAVY    = '#1A1A2E';
-const NAVY2   = '#16213E';
-const NAVY3   = '#0F1629';
-const ORANGE  = '#FF6B35';
-const ORANGE2 = '#F7931E';
-const GREEN   = '#10b981';
+const NAVY    = '#00004b';
+const NAVY2   = '#000152';
+const NAVY3   = '#08004d';
+const ORANGE  = '#fc4300';
+const ORANGE2 = '#f18100';
+const GREEN   = '#168300';
 const WHITE   = '#FFFFFF';
-const MUTED   = 'rgba(255,255,255,0.45)';
+const MUTED   = 'rgba(255, 255, 255, 0.84)';
 
 // ── Category sections to display ──────────────────────────────────────
 const CATEGORY_SECTIONS = [
@@ -30,7 +30,7 @@ const CATEGORY_SECTIONS = [
 
 // ── Star ──────────────────────────────────────────────────────────────
 const Star = () => (
-  <svg width="10" height="10" viewBox="0 0 24 24" fill="#F59E0B">
+  <svg width="10" height="10" viewBox="0 0 24 24" fill="#ffa200">
     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
   </svg>
 );

@@ -30,7 +30,7 @@ function ItemSheet({ item, vendor, onClose, onAddToCart }) {
             {item.popular&&<span className="popular-badge" style={{ marginBottom:8, display:'inline-block' }}>Popular</span>}
             <h2 style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:20, color:'white', marginBottom:4 }}>{item.name}</h2>
             <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-              <span style={{ fontFamily:'Sora,sans-serif', fontSize:22, fontWeight:800, color:'#FF6B35' }}>GH₵ {item.price?.toFixed(2)}</span>
+              <span style={{ fontFamily:'Sora,sans-serif', fontSize:22, fontWeight:800, color:'#e43d00' }}>GH₵ {item.price?.toFixed(2)}</span>
               {item.discount>0&&<span style={{ fontSize:14, color:'rgba(255,255,255,.5)', textDecoration:'line-through' }}>GH₵{(item.price/(1-item.discount/100)).toFixed(2)}</span>}
             </div>
           </div>
@@ -53,7 +53,7 @@ function ItemSheet({ item, vendor, onClose, onAddToCart }) {
                 <span style={{ fontSize:15 }}>{e}</span>
               </div>
               <div style={{ textAlign:'right' }}>
-                <div style={{ fontWeight:700, color:'#FF6B35', fontSize:15 }}>+GH₵{extraPrice.toFixed(2)}</div>
+                <div style={{ fontWeight:700, color:'#f04000', fontSize:15 }}>+GH₵{extraPrice.toFixed(2)}</div>
                 <div style={{ fontSize:11, color:'#9CA3AF', textDecoration:'line-through' }}>GH₵{(extraPrice+20).toFixed(2)}</div>
               </div>
             </div>
@@ -153,7 +153,7 @@ export default function VendorPage({ vendor, customer, showToast, onBack, onOrde
       <div style={{ background:'white', borderRadius:'24px 24px 0 0', marginTop:-24, padding:'20px 20px 0', position:'relative' }}>
         <h1 style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:22, marginBottom:4 }}>{vendor.businessName}</h1>
         <div style={{ display:'flex', alignItems:'center', gap:4, fontSize:13, color:'#6B7280', marginBottom:8 }}>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fa9e00" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <span style={{ fontWeight:700 }}>{vendor.rating||4.4} ({vendor.reviewCount||520}+)</span>
           <span>·</span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -170,8 +170,8 @@ export default function VendorPage({ vendor, customer, showToast, onBack, onOrde
         <div style={{ display:'flex', gap:8, overflowX:'auto', marginBottom:16, paddingBottom:4, scrollbarWidth:'none' }}>
           {['15% off everything on orders over GH₵ 90.00','15% off everything on orders over GH₵ 90.00','15% off everything'].map((offer,i)=>(
             <div key={i} style={{ background:'#FFF7ED', border:'1px solid #FED7AA', borderRadius:20, padding:'6px 12px', display:'flex', alignItems:'center', gap:6, flexShrink:0 }}>
-              <span style={{ background:'#FF6B35', color:'white', borderRadius:'50%', width:16, height:16, display:'flex', alignItems:'center', justifyContent:'center', fontSize:10, fontWeight:700 }}>%</span>
-              <span style={{ fontSize:11, color:'#92400E', fontWeight:500, whiteSpace:'nowrap' }}>{offer}</span>
+              <span style={{ background:'#e41b00', color:'white', borderRadius:'50%', width:16, height:16, display:'flex', alignItems:'center', justifyContent:'center', fontSize:10, fontWeight:700 }}>%</span>
+              <span style={{ fontSize:11, color:'#883400', fontWeight:500, whiteSpace:'nowrap' }}>{offer}</span>
             </div>
           ))}
         </div>
@@ -196,7 +196,7 @@ export default function VendorPage({ vendor, customer, showToast, onBack, onOrde
             <div key={section} style={{ marginBottom:24 }}>
               <div style={{ display:'flex', justifyContent:'space-between', marginBottom:12 }}>
                 <span style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:16 }}>{section}</span>
-                <span style={{ fontSize:13, color:'#FF6B35', fontWeight:700, cursor:'pointer' }}>All →</span>
+                <span style={{ fontSize:13, color:'#ec3f00', fontWeight:700, cursor:'pointer' }}>All →</span>
               </div>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }}>
                 {filtered.map(item=>(
@@ -210,7 +210,7 @@ export default function VendorPage({ vendor, customer, showToast, onBack, onOrde
                       <div style={{ fontWeight:700, fontSize:13, overflow:'hidden', whiteSpace:'nowrap', textOverflow:'ellipsis', marginBottom:4 }}>{item.name}</div>
                       <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
                         <div>
-                          <div style={{ fontFamily:'Sora,sans-serif', fontWeight:800, color:'#FF6B35', fontSize:14 }}>GH₵{item.price?.toFixed(2)}</div>
+                          <div style={{ fontFamily:'Sora,sans-serif', fontWeight:800, color:'#ee3f00', fontSize:14 }}>GH₵{item.price?.toFixed(2)}</div>
                           {item.discount>0&&<div style={{ fontSize:10, color:'#9CA3AF', textDecoration:'line-through' }}>GH₵{(item.price/(1-item.discount/100)).toFixed(2)}</div>}
                         </div>
                         <button onClick={e=>{e.stopPropagation(); addToCart(item);}} style={{ width:28, height:28, borderRadius:'50%', background:'#FF6B35', border:'none', color:'white', fontSize:18, cursor:'pointer', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:700 }}>+</button>
@@ -262,7 +262,7 @@ export default function VendorPage({ vendor, customer, showToast, onBack, onOrde
                 </div>
                 <div style={{ flex:1 }}>
                   <div style={{ fontWeight:700, fontSize:14 }}>{item.name}</div>
-                  <div style={{ fontFamily:'Sora,sans-serif', color:'#FF6B35', fontWeight:800, fontSize:15 }}>GH₵{(item.price*item.qty).toFixed(2)}</div>
+                  <div style={{ fontFamily:'Sora,sans-serif', color:'#ff4400', fontWeight:800, fontSize:15 }}>GH₵{(item.price*item.qty).toFixed(2)}</div>
                 </div>
                 <div style={{ display:'flex', alignItems:'center', gap:10 }}>
                   <button onClick={()=>setCart(c=>c.map(x=>x.id===item.id?{...x,qty:Math.max(0,x.qty-1)}:x).filter(x=>x.qty>0))} style={{ width:28, height:28, borderRadius:'50%', background:'#F5F5F5', border:'none', cursor:'pointer', fontSize:16, display:'flex', alignItems:'center', justifyContent:'center' }}>−</button>

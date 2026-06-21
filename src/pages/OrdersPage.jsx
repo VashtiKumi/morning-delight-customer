@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import DB from '../utils/db';
 
-const SC = { pending:'#F59E0B', confirmed:'#FF6B35', preparing:'#7C3AED', ready:'#06b6d4', on_the_way:'#FF6B35', delivered:'#10b981', cancelled:'#EF4444' };
+const SC = { pending:'#eb9500', confirmed:'#f54100', preparing:'#5a00f5', ready:'#00a108', on_the_way:'#dd3b00', delivered:'#0fb300', cancelled:'#d40000' };
 const TABS = ['all','active','completed','cancelled'];
 
 // Document × icon (exactly as in screenshot)
@@ -151,7 +151,7 @@ export default function OrdersPage({ customer, showToast, onTrack }) {
               {sel.items?.map((item,i)=>(
                 <div key={i} style={{ display:'flex', justifyContent:'space-between', padding:'8px 12px', background:'#F9FAFB', borderRadius:10, marginBottom:6, fontSize:13 }}>
                   <span>{item.qty}× {item.name}</span>
-                  <span style={{ fontWeight:700, color:'#FF6B35' }}>GH₵{(item.price*item.qty).toFixed(2)}</span>
+                  <span style={{ fontWeight:700, color:'#e43d00' }}>GH₵{(item.price*item.qty).toFixed(2)}</span>
                 </div>
               ))}
             </div>
