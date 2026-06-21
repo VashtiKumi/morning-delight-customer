@@ -4,18 +4,18 @@
 :root {
   --font-display: 'Sora', sans-serif;
   --font-body:    'DM Sans', sans-serif;
-  --primary:   #FF6B35;
-  --primary-d: #e85a24;
-  --dark:      #1A1A2E;
-  --dark2:     #16213E;
+  --primary:   #e23c00;
+  --primary-d: #ee4300;
+  --dark:      #000047;
+  --dark2:     #000442;
   --bg:        #F2F2F2;
   --white:     #FFFFFF;
   --text:      #0F0F0F;
-  --sub:       #6B7280;
+  --sub:       #294275;
   --border:    #E5E7EB;
-  --success:   #10b981;
-  --danger:    #EF4444;
-  --warning:   #F59E0B;
+  --success:   #007a0a;
+  --danger:    #db0000;
+  --warning:   #ec9600;
   --radius:    14px;
   --shadow:    0 2px 16px rgba(0,0,0,.08);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
@@ -73,7 +73,7 @@ button { cursor: pointer; }
 
 /* ─── Buttons ─── */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), #F7931E);
+  background: linear-gradient(135deg, var(--primary), #f38200);
   color: white; border: none; border-radius: 50px;
   font-weight: 700; font-size: 15px; padding: 15px 24px;
   cursor: pointer; transition: all .18s; display: inline-flex;
@@ -115,7 +115,7 @@ button { cursor: pointer; }
   padding: 2px 7px; border-radius: 20px;
 }
 .badge-free {
-  background: #D1FAE5; color: #065F46; font-size: 10px; font-weight: 700;
+  background: #D1FAE5; color: #005c00; font-size: 10px; font-weight: 700;
   padding: 2px 8px; border-radius: 20px;
 }
 
@@ -161,8 +161,8 @@ button { cursor: pointer; }
   transition: all .25s; background: rgba(255,255,255,.1);
 }
 .nav-home-inner.active {
-  background: linear-gradient(135deg, var(--primary), #F7931E);
-  box-shadow: 0 4px 16px rgba(255,107,53,.45);
+  background: linear-gradient(135deg, var(--primary), #e97c00);
+  box-shadow: 0 4px 16px rgba(196, 52, 0, 0.658);
 }
 
 /* ─── Page layout ─── */

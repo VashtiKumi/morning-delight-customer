@@ -260,7 +260,7 @@ export default function App() {
             <div style={{ width:36, height:36, borderRadius:10, background:'linear-gradient(135deg,#FF6B35,#F7931E)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
               <svg width="20" height="20" viewBox="0 0 40 40" fill="none"><path d="M20 4L7 11.5V25c0 5.5 5.8 9.2 13 10 7.2-.8 13-4.5 13-10V11.5L20 4z" fill="white" opacity=".9"/><circle cx="20" cy="19" r="5" fill="#FF6B35"/></svg>
             </div>
-            <span style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:15, color:'#FF6B35' }}>Morning Delight</span>
+            <span style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:15, color:'#d43900' }}>Morning Delight</span>
           </div>
           {[['home','Home','M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'],['search','Breakfast','M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z'],['orders','Order History','M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2'],['notifs','Notifications','M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0'],['profile','Account','M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z']].map(([id,label,icon])=>(
             <button key={id} onClick={()=>setSection(id)} style={{ display:'flex', alignItems:'center', gap:12, padding:'12px 16px', borderRadius:12, border:'none', background:section===id?'#FFF7ED':'transparent', color:section===id?'#FF6B35':'#6B7280', fontWeight:section===id?700:500, fontSize:14, cursor:'pointer', width:'100%', textAlign:'left', marginBottom:4, fontFamily:'inherit' }}>
