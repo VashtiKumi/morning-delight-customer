@@ -277,7 +277,7 @@ export default function VendorPage({ vendor, customer, showToast, onBack, onOrde
                 <div key={l} style={{ display:'flex', justifyContent:'space-between', padding:'6px 0', fontSize:14, color:'#6B7280' }}><span>{l}</span><span>{v}</span></div>
               ))}
               <div style={{ display:'flex', justifyContent:'space-between', padding:'10px 0 0', borderTop:'1px solid #E5E7EB', marginTop:6, fontWeight:800, fontSize:16 }}>
-                <span>Total</span><span style={{ color:'#FF6B35' }}>GH₵{total.toFixed(2)}</span>
+                <span>Total</span><span style={{ color:'#fc4300' }}>GH₵{total.toFixed(2)}</span>
               </div>
             </div>
 
