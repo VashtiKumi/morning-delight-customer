@@ -4,13 +4,13 @@ import DB from '../utils/db';
 
 const TYPE_CONFIG = {
   order_placed: { color:'#2D6A4F', bg:'#f0fdf4', border:'#a7f3d0', icon:'✅' },
-  order_update: { color:'#0039a3', bg:'#ecfeff', border:'#a5f3fc', icon:'📦' },
+  order_update: { color:'#002c7e', bg:'#ecfeff', border:'#a5f3fc', icon:'📦' },
   on_the_way:   { color:'#f84200', bg:'#fff7ed', border:'#fed7aa', icon:'🛵' },
   delivered:    { color:'#047900', bg:'#f0fdf4', border:'#bbf7d0', icon:'🎉' },
   morning:      { color:'#ffa200', bg:'#fffbeb', border:'#fde68a', icon:'☀️' },
-  new_food:     { color:'#5200df', bg:'#f5f3ff', border:'#ddd6fe', icon:'🍽️' },
+  new_food:     { color:'#34008f', bg:'#f5f3ff', border:'#ddd6fe', icon:'🍽️' },
   reward:       { color:'#F59E0B', bg:'#fffbeb', border:'#fde68a', icon:'⭐' },
-  promo:        { color:'#4300b8', bg:'#f5f3ff', border:'#ddd6fe', icon:'🎁' },
+  promo:        { color:'#3c00a3', bg:'#f5f3ff', border:'#ddd6fe', icon:'🎁' },
   new_order:    { color:'#f04000', bg:'#fff7ed', border:'#fed7aa', icon:'🔔' },
   system:       { color:'#000f94', bg:'#f9fafb', border:'#E5E7EB', icon:'⚙️' },
 };
@@ -46,7 +46,7 @@ export default function NotificationsPage({ customer }) {
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between' }}>
           <h1 style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:22, color:'#0F0F0F' }}>Notifications</h1>
           {unread > 0 && (
-            <span style={{ background:'#EF4444', color:'white', fontSize:11, fontWeight:700, padding:'2px 8px', borderRadius:20 }}>
+            <span style={{ background:'#db0000', color:'white', fontSize:11, fontWeight:700, padding:'2px 8px', borderRadius:20 }}>
               {unread} new
             </span>
           )}

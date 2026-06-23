@@ -9,14 +9,14 @@ import { sendOTPEmail } from '../utils/emailService';
 
 const GREEN     = '#02005c';
 const GREEN_D   = '#000d53';
-const GREEN_L   = '#000872';
+const GREEN_L   = '#000658';
 const GOLD      = '#fdbe00';
 const GOLD_D    = '#d19600';
 const WHITE     = '#FFFFFF';
 const LGRAY     = '#F8F9FA';
 const BORDER    = '#E2E8F0';
 const TEXT      = '#041336';
-const MUTED     = '#00285f';
+const MUTED     = '#00204d';
 
 // ── Responsive hook ────────────────────────────────────────────────────
 function useIsMobile() {

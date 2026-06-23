@@ -19,6 +19,7 @@ import ProfilePage       from './pages/ProfilePage';
 import TrackingPage      from './pages/TrackingPage';
 
 import './styles/global.css';
+import { fsInit } from './utils/firebaseSync';
 import { initInstallPrompt, triggerInstall, isInstalled } from './registerSW';
 
 seedDemoData();
@@ -98,6 +99,16 @@ export default function App() {
     const unlock = () => { SoundService.unlock(); document.removeEventListener('click', unlock); };
     document.addEventListener('click', unlock);
     return () => document.removeEventListener('click', unlock);
+  }, []);
+
+  // ── Firebase sync: pull cloud data + listen for changes ─────────────
+  useEffect(() => {
+    // Listen to critical collections in real time
+    fsInit(['cb_vendors', 'cb_menus', 'cb_orders', 'cb_notifs']);
+    // Re-render when Firebase pushes new data
+    const onSync = () => setScreen(s => s); // trigger re-render
+    window.addEventListener('md-sync', onSync);
+    return () => window.removeEventListener('md-sync', onSync);
   }, []);
 
   // Check for new food uploads whenever user returns to the tab

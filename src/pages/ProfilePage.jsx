@@ -9,7 +9,7 @@ import DB from '../utils/db';
 import { enc, REWARD_TIERS } from '../utils/constants';
 
 const GREEN  = '#01165a';
-const ORANGE = '#db3a00';
+const ORANGE = '#d63900';
 const GOLD   = '#f3b600';
 const LGRAY  = '#F8F9FA';
 const WHITE  = '#FFFFFF';
@@ -93,7 +93,7 @@ function AddressesModal({ customer, onClose, showToast }) {
                   Set primary
                 </button>
               )}
-              <button onClick={()=>del(a.id)} style={{ width:28, height:28, borderRadius:'50%', background:'#FEF2F2', border:'1px solid #FECACA', color:'#EF4444', cursor:'pointer', fontSize:16, display:'flex', alignItems:'center', justifyContent:'center' }}>×</button>
+              <button onClick={()=>del(a.id)} style={{ width:28, height:28, borderRadius:'50%', background:'#FEF2F2', border:'1px solid #FECACA', color:'#eb0000', cursor:'pointer', fontSize:16, display:'flex', alignItems:'center', justifyContent:'center' }}>×</button>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@ function NotificationsModal({ customer, onClose }) {
           </button>
         )}
         {permission === 'denied' && (
-          <div style={{ marginTop:12, padding:'10px 14px', background:'#FEF2F2', borderRadius:10, fontSize:12, color:'#EF4444', lineHeight:1.6 }}>
+          <div style={{ marginTop:12, padding:'10px 14px', background:'#FEF2F2', borderRadius:10, fontSize:12, color:'#d30000', lineHeight:1.6 }}>
             Notifications are blocked. Go to your browser Settings → Site Settings → Notifications → Allow Morning Delight.
           </div>
         )}
@@ -326,16 +326,16 @@ export default function ProfilePage({ customer, setCustomer, showToast, onLogout
 
   const MENU = [
     { label:'My Addresses',    icon:'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z M12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6z', color:ORANGE,  modal:'addresses' },
-    { label:'Payment Methods', icon:'M1 4h22v16H1zM1 8h22',                                                                    color:'#10b981', modal:'payment' },
+    { label:'Payment Methods', icon:'M1 4h22v16H1zM1 8h22',                                                                    color:'#000657', modal:'payment' },
     { label:'Notifications',   icon:'M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 0 1-3.46 0',               color:GOLD,      modal:'notifications' },
-    { label:'Help & Support',  icon:'M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3 M12 17h.01',                                        color:'#7C3AED', modal:'help' },
+    { label:'Help & Support',  icon:'M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3 M12 17h.01',                                        color:'#4500bb', modal:'help' },
   ];
 
   return (
     <div style={{ background:LGRAY, minHeight:'100vh' }} className="page-wrapper">
 
       {/* ── Header — clean, no decorative circles that bleed ── */}
-      <div style={{ background:NAVY, padding:'max(48px,env(safe-area-inset-top)) 20px 80px', position:'relative', overflow:'hidden' }}>
+      <div style={{ background:NAVY, padding:'max(48px,env(safe-area-inset-top)) 20px 80px', position:'', overflow:'hidden' }}>
         {/* Decorative arc — fully inside header, overflow:hidden clips it */}
         <div style={{ position:'absolute', top:-60, right:-40, width:160, height:160, borderRadius:'50%', background:`${ORANGE}10`, pointerEvents:'none' }}/>
         <h1 style={{ fontFamily:'Sora,sans-serif', fontWeight:800, fontSize:22, color:WHITE, marginBottom:4 }}>My Account</h1>
